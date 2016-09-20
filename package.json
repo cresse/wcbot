@@ -1,0 +1,11 @@
+{
+  "name": "wcbot",
+  "version": "1.0.0",
+  "description": "figures out the wc in wcowl",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "_cresse",
+  "license": "ISC"
+}
