@@ -4,16 +4,12 @@ var Twitter = require('twitter');
 var client = new Twitter(credentials);
 
 function bot() {
-    client.get('favorites/list', function(err, tweets, response) {
-        if (err) throw error;
-        console.log(tweets[0].text);
+    client.post('statuses/update', {status: getTweet()}, function(err, tweet, response) {
+        if (err) {
+            console.log(error);
+        }
+        console.log(tweet);
     });
-//    client.post('statuses/update', {status: getTweet()}, function(err, tweet, response) {
-//        if (err) {
-//            console.log(error);
-//        }
-//        console.log(tweet);
-//    });
 }
 
 function getTweet() {
@@ -28,6 +24,5 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-//    if (Date.now() % 1000 === 0) console.log("it's been 1  second " + Date.now());
-setInterval(function() { bot() }, 10000);
+setInterval(function() { bot() }, 60 * 60 * 1000);
 
